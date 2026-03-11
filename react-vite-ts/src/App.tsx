@@ -1,0 +1,38 @@
+import { useEffect, useState } from "react";
+import { getBackendEndpoint } from "./api/backend";
+
+import CountBtn from "@/components/CountBtn";
+import ReactSVG from "@/assets/react.svg";
+
+function App() {
+  const [message, setMessage] = useState("No response from backend API");
+
+  useEffect(() => {
+    getBackendEndpoint().then((res: any) => {
+      if (res) { 
+        setMessage(res.message)
+        console.log("Response from App Backend", res);
+      }
+    });
+  }, []);
+
+  return (
+    <main className="flex flex-col items-center justify-center h-screen">
+      <div className="flex flex-col items-center gap-y-4">
+        <div className="inline-flex items-center gap-x-4">
+          <img src={ReactSVG} alt="React Logo" className="w-32" />
+          <span className="text-6xl">+</span>
+          <img src={"/vite.svg"} alt="Vite Logo" className="w-32" />
+        </div>
+        <p>
+          <CountBtn />
+        </p>
+        <p>
+          Backend API Message: {message}
+        </p>
+      </div>
+    </main>
+  );
+}
+
+export default App;

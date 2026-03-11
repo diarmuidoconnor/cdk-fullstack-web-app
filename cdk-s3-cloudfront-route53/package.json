@@ -1,0 +1,35 @@
+{
+  "name": "cdk-s3-cloudfront",
+  "version": "0.1.0",
+  "bin": {
+    "cdk-example-s3-cloudfront": "bin/cdk-example-s3-cloudfront.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "test": "jest",
+    "cdk": "cdk",
+    "schema": "typescript-json-schema --noExtraProps --required --refs false -o ./shared/types.schema.json  \"./shared/types.d.ts\" \"*\""
+
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.147",
+    "@types/node": "22.12.0",
+    "aws-cdk": "2.176.0",
+    "esbuild": "^0.24.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.3",
+    "typescript-json-schema": "^0.59.0"
+  },
+  "dependencies": {
+    "@aws-sdk/client-cognito-identity-provider": "^3.744.0",
+    "ajv": "^8.12.1",
+    "aws-cdk-lib": "2.176.0",
+    "axios": "^1.7.9",
+     "constructs": "^10.4.2",
+    "source-map-support": "^0.5.21",
+    "jsonwebtoken": "^9.0.2",
+    "jwk-to-pem": "^2.0.7",
+    "jwt-decode": "^4.0.0"
+  }
+}
