@@ -35,7 +35,7 @@ export class AppAPI extends Construct {
       },
     });
 
-    const todoEndpoint = api.root.addResource("todos")
+    const todoEndpoint = api.root.addResource("demo")
     todoEndpoint.addMethod(
       "GET",
       new apig.LambdaIntegration(demoFn, { proxy: true }) // AWSIntegration
